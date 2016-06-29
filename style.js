@@ -1,11 +1,13 @@
 window.onload = function() {
   function digiClock() {
 
+  // create Date obj
   var currentTime = new Date;
-  var currentHour = currentTime.getHours();
-  var currentMinute = currentTime.getMinutes();
-  var currentSecond = currentTime.getSeconds();
-  var currentMilliseconds = currentMilliseconds.getMilliseconds();
+  // create the individual elems and add "0" padding 
+  var currentHour = ("0" + currentTime.getHours()).slice(-2);
+  var currentMinute = ("0" + currentTime.getMinutes()).slice(-2);
+  var currentSecond = ("0" + currentTime.getSeconds()).slice(-2);
+  var currentMilliseconds = ("00" + currentTime.getMilliseconds()).slice(-3);
 
   // show time of day
   var timeOfDay = (currentHour < 12) ? "AM" : "PM";
@@ -13,16 +15,13 @@ window.onload = function() {
   currentHour = (currentHour > 12) ? currentHour - 12 : currentHour;
   currentHour = (currentHour == 0) ? 12 : currentHour;
 
-  // pad min and sec with 0 if value < 10
-  currentMinute = (currentMinute < 10 ? "0" : "") + currentMinute;
-  currentSecond = (currentSecond < 10 ? "0" : "") + currentSecond; 
-  currentMilliseconds = (currentMilliseconds < 10 ? "0" : "") + currentMilliseconds;
-
   // display time as a string
   var timeString = currentHour + ":" + currentMinute + ":" + currentSecond + ":" + currentMilliseconds + " " + timeOfDay;
 
   document.getElementById("clock").innerText = timeString;
 
   }
-  setInterval(digiClock, 1000);
+  setInterval(digiClock, 1);
 }
+
+

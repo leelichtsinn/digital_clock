@@ -1,15 +1,21 @@
 body {
+  font-family: monospace, sans-serif;
   max-width: 900px;
+  background-image: repeating-linear-gradient( 45deg, black, black 10px, green 20px, green 40px /* determines size */ );
+    color: azure;
 }
 
 header {
+  font-size: 4em;
+  text-align: justify;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
 
 #clock {
-  text-align: center;
+  font-size: 5em;
+  text-align: justify;
   max-width: 900px;
   display: inline-block;
   margin-right: auto;
